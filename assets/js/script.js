@@ -2,10 +2,10 @@ const API_KEY = "efce923fdeaa8b3017a1d2da22a5ca95"
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall';
 const defaultCoords = { lat: 33.625274, lon: -112.218690 };
 
-$(document).ready(() => {
-    // Initial data fetch
-    fetchWeather();
-})
+// $(document).ready(() => {
+//     // Initial data fetch
+//     fetchWeather();
+// })
 
 // easy way to reuse and build the url
 /**
@@ -21,9 +21,10 @@ const getUrl = (lat, lon) => {
 }
 
 const fetchWeather = async (lat, lon) => {
-
     return await fetch(getUrl())
         .then((res) => res.json())
+        //.then((res) => $('.data-json').append(JSON.stringify(res, null, 2)))
+        //.catch((err) => console.error('WEATHER ERR: ', err));
         .then((res) => $('.temp').append(res.current.temp))
         .catch((err) => state['error'] = err);
 };
