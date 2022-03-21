@@ -59,20 +59,20 @@ main {
     align-items: center;
 }
 
-.btn {
-    border-radius: 10px;
-}
+/* .current-city {
 
-.current-city {
-    border: 2px solid black;
-    padding: 25px;
-}
+} */
 
 .current-city, .five-day {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     
+}
+
+.five-day {
+    display: flex;
+    align-items: center;
 }
 
 .btn-prev {
@@ -87,8 +87,19 @@ main {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 } 
 
-.btn:hover {
+.form-label {
+    margin-right: 5px;
+    margin-top: 6px;
+}
+
+#btn:hover {
     background-color:#1163fa; 
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 } 
+
+#btn{
+    border-radius: 10px;
+    border: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    margin-left: 5px;
+}

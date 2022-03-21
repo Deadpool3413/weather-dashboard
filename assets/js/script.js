@@ -53,12 +53,28 @@ const fetchCityWeather = async (city) => {
 }
 
 const setCityDetails = (cityData) => {
+    // console.log(cityData)
+    //const iconUrl = `https://openweathermap.org/img/wn/${cityData.weather.icon}@2x.png`
     $(".city").text(cityData.name)
-    $(".date").text(cityData.date)
-    $(".temp").text(cityData.temp + "°")
-    $(".wind-speed").text(cityData.windSpeed + " mph")
-    $(".uv").text(cityData.uv)
-    $(".humidity").text(cityData.humidity + "%")
+    $(".date").text("Date: " + cityData.date)
+    $(".temp").text("Temp: " + cityData.temp + "°")
+    $(".wind-speed").text("Wind Speed: " + cityData.windSpeed + " mph")
+    $(".humidity").text("Humidity: " + cityData.humidity + "%")
+    //$(".icon").setAttribute("src", iconUrl)
+
+    var uvButton = document.createElement("button")
+    uvButton.setAttribute("class", "btn")
+    
+    if(cityData.uv < 3){
+        uvButton.classList.add("btn-success")
+    } else if(cityData.uv < 7){
+        uvButton.classList.add("btn-warning")
+    } else{
+        uvButton.classList.add("btn-danger")
+    }
+    uvButton.textContent = cityData.uv
+    $(".uv").append(uvButton)
+
 }
 
 const getCurrentDate = () => {
@@ -78,7 +94,8 @@ const handleCitySearch = async () => {
         temp: cityWeather.current.temp,
         windSpeed: cityWeather.current.wind_speed,
         uv: cityWeather.current.uvi,
-        humidity: cityWeather.current.humidity
+        humidity: cityWeather.current.humidity,
+        icon: cityWeather.current.weather[0].icon
     })
 }
 
