@@ -63,10 +63,16 @@ main {
     border-radius: 10px;
 }
 
+.current-city {
+    border: 2px solid black;
+    padding: 25px;
+}
+
 .current-city, .five-day {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .btn-prev {

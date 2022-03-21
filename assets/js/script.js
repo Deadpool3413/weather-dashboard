@@ -14,10 +14,14 @@ const defaultCoords = { lat: 33.625274, lon: -112.218690 };
  * @param long: longitude desired - default from defaultCoords
  * @returns Promise<whatever the data is>
  */
-const getUrl = (lat, lon) => {
+const getWeatherUrl = (lat, lon) => {
     const urlLat = lat || defaultCoords.lat;
     const urlLon = lon || defaultCoords.lon
     return `${BASE_URL}?units=imperial&lat=${urlLat}&lon=${urlLon}&appid=${API_KEY}`;
+}
+
+const getGeoCodeUrl = (city) => {
+    
 }
 
 const fetchWeather = async (lat, lon) => {
@@ -28,3 +32,8 @@ const fetchWeather = async (lat, lon) => {
         .then((res) => $('.temp').append(res.current.temp))
         .catch((err) => state['error'] = err);
 };
+
+function getLatLonFromCity(city) {
+    http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+
+}

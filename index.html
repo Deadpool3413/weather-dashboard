@@ -17,7 +17,7 @@
     <main>
     <div class="container">
         <div class="row">
-            <div class="col-5">
+            <div class="col-5" style="border-bottom: 2px solid black">
                 <h3 class=" text-uppercase">Search For A City</h3>
                 <form id="user-form" class="input-wrapper">
                     <label class="form-label" for="city" >Search</label>
@@ -36,17 +36,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-5">
+            <div class="col-3">
                 <h2>Previous Cities</h2>
+                <!-- previous cities is from local storage in js  -->
                 <button type="button" class="btn-prev">previous cities</button>
                 <button type="button" class="btn-prev">previous cities</button>
                 <button type="button" class="btn-prev">previous cities</button>
                 <button type="button" class="btn-prev">previous cities</button>
                 <button type="button" class="btn-prev">previous cities</button>
             </div>
-            <div class="five-day col-7">
+            <div class="five-day col-9">
                 <h2>5 Day Forecast</h2>
-
+                <div class="row" id="five-day-forecast">
+                    <!-- create the days from js using the id on line 50 -->
+                    
+                </div>
             </div>
         </div>
     </div>
