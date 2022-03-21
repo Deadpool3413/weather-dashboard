@@ -62,6 +62,8 @@ const setCityDetails = (cityData) => {
     $(".wind-speed").text("Wind Speed: " + cityData.windSpeed + " mph")
     $(".humidity").text("Humidity: " + cityData.humidity + "%")
     $(".icon").attr("src", iconUrl)
+
+    $("img").css({"height":"100px","width":"100px","background-color":"whitesmoke"})
     // clearing container 
     // styling with juery
 
