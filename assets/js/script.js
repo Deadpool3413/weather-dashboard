@@ -53,14 +53,17 @@ const fetchCityWeather = async (city) => {
 }
 
 const setCityDetails = (cityData) => {
-    // console.log(cityData)
-    //const iconUrl = `https://openweathermap.org/img/wn/${cityData.weather.icon}@2x.png`
+    console.log(cityData.icon)
+    const iconUrl = `https://openweathermap.org/img/wn/${cityData.icon}@2x.png`
+    console.log(iconUrl); 
     $(".city").text(cityData.name)
     $(".date").text("Date: " + cityData.date)
     $(".temp").text("Temp: " + cityData.temp + "°")
     $(".wind-speed").text("Wind Speed: " + cityData.windSpeed + " mph")
     $(".humidity").text("Humidity: " + cityData.humidity + "%")
-    //$(".icon").setAttribute("src", iconUrl)
+    $(".icon").attr("src", iconUrl)
+    // clearing container 
+    // styling with juery
 
     var uvButton = document.createElement("button")
     uvButton.setAttribute("class", "btn")
@@ -74,7 +77,6 @@ const setCityDetails = (cityData) => {
     }
     uvButton.textContent = cityData.uv
     $(".uv").append(uvButton)
-
 }
 
 const getCurrentDate = () => {
