@@ -63,7 +63,7 @@ const setCityDetails = (cityData) => {
     $(".humidity").text("Humidity: " + cityData.humidity + "%")
     $(".icon").attr("src", iconUrl)
 
-    $("img").css({"height":"100px","width":"100px","background-color":"whitesmoke"})
+    $("img").css({"height":"100px","width":"100px","background-color":"rgba(255, 255, 255, 0.76)","border-radius":"10px","border":"solid 2px rgb(118, 118, 118)"})
     // clearing container 
     // styling with juery
 
